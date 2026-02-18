@@ -4,14 +4,24 @@ savoir: 0, tech: 0, sante: 0, energie: 0,
 agro: 0, urbain: 0, finance: 0, defense: 0
 };
 
+const coefficients = {
+  tech: 0.67,
+  savoir: 0.80,
+  finance: 1.00,
+  sante: 1.00,
+  agro: 1.33,
+  urbain: 1.33,
+  defense: 1.33,
+  energie: 1.33,
+};
+
 var chineActive = false;
 
 for (var i = 1; i <= 12; i++) {
 var radio = document.querySelector('input[name="q' + i + '"]:checked');
 if (radio) {
-var val = radio.value;
-if (scores[val] !== undefined) {
-scores[val] = scores[val] + 1;
+var val = radio.value;if (scores[val] !== undefined) {
+scores[val] = scores[val] + coefficients[val];
 }
 
 if (i === 8 && val === "oui") {
@@ -21,7 +31,7 @@ chineActive = true;
 }
 
 var mention = document.getElementById("mention").value;
-var budgetRadio = document.querySelector('input[name="q13"]:checked');
+var budgetRadio = document.querySelector('input[name="q12"]:checked');
 
 if (mention === "" || !budgetRadio) {
 alert("Oups ! L'Oracle a besoin de ta mention et de ton budget pour conclure.");
@@ -87,4 +97,4 @@ htmlFinal += '<div class="debug">Analyse terminée <=> Le parcours n\'est jamais
 htmlFinal += '<br><div class="center"><button onclick="location.reload()">Recommencer</button></div>';
 
 zone.innerHTML = htmlFinal;
-  }
+}
