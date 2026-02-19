@@ -169,4 +169,12 @@ display: none;
     max-width: 720px;
   }
 
+html {
+    font-size: 19px;
+  }
+
+  body {
+    line-height: 1.6;
+  }
+
 }
