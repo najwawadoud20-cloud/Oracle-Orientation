@@ -10,10 +10,10 @@ const coefficients = {
   finance: 1.00,
   sante: 1.00,
   agro: 1.33,
-  urbain: 1.33,
-  defense: 1.33,
-  energie: 1.33,
-};
+  urbain: 1.38,
+  defense: 1.30,
+  energie: 1.28,
+}
 
 var chineActive = false;
 
